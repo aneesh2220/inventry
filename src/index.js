@@ -1,13 +1,42 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import FormI from "./pages/form.jsx";
+import Dashboard from "./pages/dashboard.jsx";
+import SettingsI from "./pages/settings.jsx";
+import Login from "./pages/login.jsx";
+import Authpage from "./pages/authentication.jsx";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+let router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+  },
+  {
+    path: "/form",
+    element: <FormI />,
+  },
+  {
+    path: "/dashboard",
+    element: <Dashboard />,
+  },
+  {
+    path: "/settings",
+    element: <SettingsI />,
+  },
+  {
+    path: "/auth",
+    element: <Authpage />,
+  },
+]);
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
