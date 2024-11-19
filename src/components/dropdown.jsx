@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 
-const Dropdown = ({ options }) => {
+const Dropdown = ({ options, onSelectionChange }) => {
     const [selectedOption, setSelectedOption] = useState('');
 
     const handleChange = (event) => {
-        setSelectedOption(event.target.value);
+        const value = event.target.value;
+        setSelectedOption(value);
+        onSelectionChange(value); // Notify the parent component
     };
+
 
     return (
         <div>
-            <label htmlFor="dynamic-options">Choose an option:</label>
             <select id="dynamic-options" value={selectedOption} onChange={handleChange}>
                 <option value="">Select an option</option>
                 {options.map((option, index) => (
@@ -18,7 +20,6 @@ const Dropdown = ({ options }) => {
                     </option>
                 ))}
             </select>
-          
         </div>
     );
 };
