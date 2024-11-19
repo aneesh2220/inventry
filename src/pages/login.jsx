@@ -13,6 +13,7 @@ let Login = () => {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
+      localStorage.setItem("userId", auth.currentUser.uid);
       navigate("/dashboard");
 
     } catch (error) {

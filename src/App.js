@@ -8,9 +8,19 @@ import Authpage from "./pages/authentication.jsx";;
 
 
 function App() {
+
+  let userId = localStorage.getItem("userId")
   return (
     <div className="App">
-      <Authpage/>
+      {
+        userId !=null
+        ?<Dashboard/>
+        :<Authpage/>
+        
+      }
+
+
+
     </div>
   );
 }

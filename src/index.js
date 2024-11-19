@@ -9,6 +9,7 @@ import Dashboard from "./pages/dashboard.jsx";
 import SettingsI from "./pages/settings.jsx";
 import Login from "./pages/login.jsx";
 import Authpage from "./pages/authentication.jsx";
+import ProductList from "./pages/productlist.jsx";
 
 let router = createBrowserRouter([
   {
@@ -30,7 +31,12 @@ let router = createBrowserRouter([
   {
     path: "/auth",
     element: <Authpage />,
+    
   },
+  {
+    path:"/products",
+    element:<ProductList/>,
+  }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

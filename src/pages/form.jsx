@@ -26,12 +26,15 @@ let FormI = () => {
   let handleClick = async (e) => {
     e.preventDefault();
 
+    let userId = localStorage.getItem("userId");
+
     let data = {
       name: name,
       quantity: quantity,
       categry: categry,
       type: selectItem,
       status: "instock",
+      userId: userId,
     };
 
     if (selectItem === "electronics") {

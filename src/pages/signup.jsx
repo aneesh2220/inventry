@@ -18,6 +18,7 @@ let Signup = () => {
       console.log(user);
 
       if (user != null) {
+        localStorage.setItem("userId", user.uid)
         setDoc(doc(dataBase, "Users", user.uid), {
           email: emailX,
           username: usernameX,
