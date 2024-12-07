@@ -1,0 +1,45 @@
+.product-page {
+  display: flex;
+}
+
+.product-list {
+  background-color: white;
+  margin-left: 5%;
+  margin: 5%;
+  width: 75%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 12px;
+
+  .list-header {
+    display: flex;
+    margin: 16px;
+    background-color: yellow;
+    width: calc(100% - 32px);
+
+    p {
+      flex: 2;
+    }
+
+    .action-button {
+      flex: 1;
+    }
+  }
+}
+
+.item {
+  display: flex;
+
+  p {
+    flex: 2;
+  }
+
+  .action-button {
+    flex: 1;
+  }
+}
+
+.item-wrapper {
+    width: calc(100% - 32px);
+}
